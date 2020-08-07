@@ -22,6 +22,11 @@
     {{ .Content }}
   </section>
   <footer>
+
+    {{ if eq .Site.Params.commpost true }}
+    {{ partial "commpost.html" . }}
+    {{ end }}
+
     {{ with ($.Param "disqus") }}
     <div id="disqus_thread"></div>
     <script>
